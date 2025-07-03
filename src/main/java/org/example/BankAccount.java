@@ -25,7 +25,7 @@ public class BankAccount {
     }
 
     public void withdraw(double amountWithdrawn) {
-        if(amountWithdrawn > 0 && amountWithdrawn > availableBalance) {
+        if(amountWithdrawn > 0 && amountWithdrawn <= availableBalance) { //this was an error on the previous laboratory
             this.availableBalance = availableBalance - amountWithdrawn;
             System.out.printf("Withdrawn %.2f. New balance: %.2f%n", amountWithdrawn, this.availableBalance);
         }
@@ -45,6 +45,10 @@ public class BankAccount {
 
     public String getBankHolderName() {
         return bankHolderName;
+    }
+
+    public double getAvailableBalance() {
+        return availableBalance;
     }
 }
 
